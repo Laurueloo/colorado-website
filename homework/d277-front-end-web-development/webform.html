@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <title>Personal Information</title>
+      <link rel="stylesheet" href="design.css">
+      <script src="validate.js" defer></script>
+  </head>
+  <body>
+  <br>
+  <nav class="links" style="text-align: center;">
+      <a "href="index.html">Home</a> <a href="capitalcity.html">Denver</a> <a href="noncapitalcities1.html">Aurora</a> <a href="noncapitalcities2.html">Loveland</a><a href="webform.html" target="_blank">Email confirmation</a>
+  </nav>
+  <script>
+      function matchingEmails(){
+        let emailAddress = document.getElementById("emailAddress").value;
+        let emailConf = document.getElementById("emailConf").value;
+        if (emailAddress !== emailConf){
+          window.alert("Emails don't match! Please try again");
+          return false;
+        } else {
+          return true;
+        }
+      }
+  </script>
+  <br>
+  <form id="stylingemail" onsubmit="return matchingEmails()">
+      <label for="firstName">First Name:</label><br>
+      <input type="text" id="firstName" name="firstName" required><br>
+
+      <label for="lastName">Last Name:</label><br>
+      <input type="text" id="lastName" name="lastName" required><br>
+
+      <label for="emailAddress">Email Address:</label><br>
+      <input type="text" id="emailAddress" name="emailAddress" required><br>
+
+      <label for="emailConf">Re-type Email Address:</label><br>
+      <input type="text" id="emailConf" name="emailConf" required><br>
+
+      <br>
+      <label for="question">Write A Question</label><br>
+      <textarea name="question" id="question" required></textarea>
+      <br>
+      <button type="submit" onclick="matchingEmails()">Submit</button>
+  </form>
+  </body>
+  </html> 
